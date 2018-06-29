@@ -110,7 +110,9 @@ public class FailTestOnLeakRunListener extends RunListener {
 
   /** Can be overridden to report leaks in a different way or do additional reporting. */
   protected void reportLeaks(@NonNull InstrumentationLeakResults results) {
+    System.out.println("FAIL TEST ON LEAK reporting leaks");
     if (!results.detectedLeaks.isEmpty()) {
+      System.out.println("FAIL TEST ON LEAK leaks not empty");
       String message =
           checkNotNull(buildLeakDetectedMessage(results.detectedLeaks), "buildLeakDetectedMessage");
 
